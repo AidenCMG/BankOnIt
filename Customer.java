@@ -1,10 +1,16 @@
+import java.util.*;
 class Customer extends User{
     CheckingAccount checking = new CheckingAccount();
     SavingsAccount savings = new SavingsAccount();
     
     public static void main(String[] args){
        Customer cu = new Customer();
-       cu.login(); 
+       if(cu.login() == true){
+        cu.start();
+       } 
+       else{
+        System.out.println("Bad username or password");
+       }
 
     }
 
@@ -13,7 +19,7 @@ class Customer extends User{
         userName = "Alice";
     }
 
-    public Customer(userName,PIN){
+    public Customer(String userName, String PIN){
         this.setUserName(userName);
         this.setPIN(PIN);
     }
@@ -40,6 +46,7 @@ class Customer extends User{
             else {
                 System.out.println("Not a valid input");
             }
+        }
     }
 
     public String menu(){
@@ -55,8 +62,8 @@ class Customer extends User{
     public void changePin(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter current PIN: ");
-        if(scanner.nextLine().equals this.getPIN()){
-            System.out.println("Enter a new PIN");
+        if(scanner.nextLine().equals(this.getPIN())){
+            System.out.println("Enter a new PIN: ");
             this.setPIN(scanner.nextLine());
         }
         else{
@@ -65,6 +72,7 @@ class Customer extends User{
     }
 
     public String getReport(){
-        
+
+        return this.getUserName() + ", " + this.getPIN() + ", " + checking.getBalanceString() + ", " + savings.getBalanceString();
     }
 }
