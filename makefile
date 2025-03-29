@@ -19,3 +19,12 @@ User.class: User.java HasMenu.class
 
 clean:
 	rm *.class
+
+Customer.class: Customer.java SavingsAccount.class User.class
+	javac -g Customer.java
+
+Admin.class: Admin.java User.class
+	javac -g Admin.java
+
+Bank.class: Bank.java Admin.class Customer.class
+	javac -g Bank.java
