@@ -1,5 +1,7 @@
 import java.util.*;
-class Customer extends User{
+import java.io.*;
+
+class Customer extends User implements Serializable{
     CheckingAccount checking = new CheckingAccount();
     SavingsAccount savings = new SavingsAccount();
     
