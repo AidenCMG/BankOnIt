@@ -1,8 +1,8 @@
 import java.util.*;
 
-abstract class user implements HasMenu{
-    private String userName;
-    private String PIN;
+abstract class User implements HasMenu{
+    String userName;
+    String PIN;
 
     public boolean login(){
         Scanner scanner = new Scanner(System.in);
