@@ -1,8 +1,9 @@
 import java.util.*;
+import java.io.*;
 
 class SavingsAccount extends CheckingAccount{
 
-    double interestRate;
+    double interestRate = .41d;
 
     public static void main(String[] args){
         SavingsAccount sa = new SavingsAccount();
@@ -11,6 +12,7 @@ class SavingsAccount extends CheckingAccount{
 
     public void calcInterest(){
         double interest = (balance * (interestRate/100));
+        setBalance(balance+interest);
     }
 
     public void setInterestRate(){
